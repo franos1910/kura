@@ -86,7 +86,7 @@
             <option value="0.3">Sporadyczny wysilek fizyczny, przenoszenie rzeczy lekkich, trochę ruchu (ponad 2000 kroków)</option>
             <option value="0.4">Średni wysiłek fizyczny podczas dnia, ruchliwa praca 5-8 tys kroków - wynik </option>
             <option value="0.5">Duży wysiłek fizyczny np praca na roli, w ogrodzie, hucie i tym podobne / lub 15-20 tyś kroków dziennie</option>
-            <option value="0.7">Bardzo duży wysilek fizyczny np praca górnika, budowlańca i inne podobne zawody / lub ponad 25 tys kroków dziennie<option>
+            <option value="0.7">Bardzo duży wysilek fizyczny np praca górnika, budowlańca i inne podobne zawody / lub ponad 25 tys kroków dziennie</option>
         </select>
         
             </div>
@@ -295,17 +295,84 @@
    
 <script>
     let sex, weight, height, age,intensity,time,amount, activity,whatNow, bmr,tef,tea,neat,result;
+    
+    const calcErr = () =>{
+        document.querySelector(".calc-result p").innerHTML="Wprowadziłeś błędne dane! Spróbuj ponownie.";
+        document.querySelector(".calc-result p").scrollIntoView({ behavior: 'smooth', block: 'center' })};
+    
 document.querySelector("button").addEventListener("click", function(){
     event.preventDefault();
-     sex = document.querySelector("input[name=sex]:checked").value *1;
-    weight= document.querySelector("input[name=weight]").value *1;
-    height= document.querySelector("input[name=height]").value *1;
-    age= document.querySelector("input[name=age]").value *1;
-    intensity = document.querySelector("#intensity").value *1;
-    time = document.querySelector("input[name=time]").value *1;
-    amount = document.querySelector("input[name=amount]").value *1;
-    activity = document.querySelector("#activity").value *1;
-    whatNow= document.querySelector("input[name=whatNow]:checked").value *1;
+    
+    let element = document.querySelector("input[name=sex]:checked");
+    if(element!=null){
+     sex =element.value*1;
+    }else{
+        calcErr();
+        return 0;
+    }
+    element = document.querySelector("input[name=weight]");
+    if(element.value>0){
+        weight =element.value*1;
+    }else{
+        calcErr();
+        return 0;
+    
+    }
+    element = document.querySelector("input[name=height]");
+    if(element.value>0){
+        height =element.value*1;
+    }else{
+        calcErr();
+        return 0;
+    
+    }
+    element = document.querySelector("input[name=age]");
+    if(element.value>0){
+        age =element.value*1;
+    }else{
+        calcErr();
+        return 0;
+    
+    }
+    element = document.querySelector("#intensity");
+    if(element!=null){
+        intensity =element.value*1;
+    }else{
+        calcErr();
+        return 0;
+    
+    }
+    element = document.querySelector("input[name=time]");
+    if(element.value>=0){
+        time =element.value*1;
+    }else{
+        calcErr();
+        return 0;
+    }
+     element = document.querySelector("input[name=amount]");
+    if(element.value*1>=0 && element.value*1<=7){
+        amount =element.value*1;
+    }else{
+        calcErr();
+        return 0;
+    
+    }
+    element = document.querySelector("#activity");
+    if(element!=null){
+        activity =element.value*1;
+    }else{
+        calcErr();
+        return 0;
+    
+    }
+    element = document.querySelector("input[name=whatNow]:checked");
+    if(element!=null){
+        whatNow =element.value*1;
+    }else{
+        calcErr();
+        return 0;
+    }
+    
     
     
     //1 bmr
@@ -325,6 +392,6 @@ document.querySelector("button").addEventListener("click", function(){
     
     
     let calcResult= document.querySelector(".calc-result p").innerHTML = "Twoje zapotrzebowanie wynosi: <strong>"+result+" kcal</strong>"; 
-    document.querySelector(".calc-result p").scrollIntoView({ behavior: 'smooth', block: 'center' });
+    
 });
 </script>
