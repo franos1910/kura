@@ -1,0 +1,303 @@
+<div class="container">
+<div class="kura-calc">
+    <h2>Kalkulator Zapotrzebowania Kalorycznego | <span class="calc-primary-color">KuraSport</span></h2>
+    <img src="kura.jpg" alt="">
+    <form action="">
+       <div class="calc-label-input">
+           <div class="calc-label-heading"><strong>Płeć:</strong> </div>
+           <div class="calc-label-option"> <label class="label-check">Mężczyzna<input type="radio" name="sex" value="5">  <span class="checkmark-calc"></span></label>  </div>
+           <div class="calc-label-option"> <label class="label-check"> Kobieta <input type="radio" name="sex" value="-161" >  <span class="checkmark-calc"></span></label></div>
+        </div>
+        
+        <div class="calc-label-input">
+        <label>
+            <div class="calc-label-heading"><strong>Masa:</strong> </div><input type="number" min="0" name="weight" placeholder="Masa (kg)">
+        </label>
+        </div>
+        
+            
+        <div class="calc-label-input">   
+        <label>
+            <div class="calc-label-heading"><strong>Wzrost:</strong> </div><input type="number" min="0" name="height" placeholder="Wzrost (cm)">
+        </label>
+        </div>
+        
+        
+         <div class="calc-label-input">
+        <label>
+            <div class="calc-label-heading"><strong>Wiek:</strong> </div><input type="number" min="0" name="age" placeholder="Wiek">
+        </label>
+        </div>
+        
+        <div class="calc-label">
+            <div class="calc-label-heading">Intensywność treningu: </div>
+        
+            <div class="calc-label-option-br"><label class="label-check">6<input type="radio" name="intensity" value="6"><span class="checkmark-calc"></span>  </label></div>
+            <div class="calc-label-option-br"><label class="label-check"> 7 <input type="radio" name="intensity" value="7"><span class="checkmark-calc"></span> </label></div>
+            <div class="calc-label-option-br"><label class="label-check"> 8<input type="radio" name="intensity" value="8"><span class="checkmark-calc"></span> </label></div>
+            <div class="calc-label-option-br"><label class="label-check">  9<input type="radio" name="intensity" value="9"><span class="checkmark-calc"></span></label></div>
+            <div class="calc-label-option-br"><label class="label-check">10<input type="radio" name="intensity" value="10"><span class="checkmark-calc"></span></label></div>
+
+        
+        <div class="calc-label-input">
+        <label>Średni czas treningu: <input type="number" min="0" name="time" placeholder="czas (min)">
+        </label>
+        </div>
+        <div class="calc-label-input">
+        <label>Ilość treningów w tygodniu: <input type="number" min="0" max="7" name="amount" placeholder="0-7"></label>    
+        </div>
+        </div>
+        
+        
+        
+        <div class="calc-label label-intensity">
+        <div class="calc-label-heading">Tryb życia: </div>
+        
+        
+            <div class="calc-label-option-br"><label class="label-check"><span class="calc-label-option-strong">Bardzo niska aktywnosc</span> <span class="calc-label-option-normal">praca siedzaca, bardzo malo ruchu lub 0 ruchu 500-1000 krokow</span><input type="radio" name="activity" value="0.2"><span class="checkmark-calc"></span></label></div>
+           
+            <div class="calc-label-option-br"><label class="label-check"><span class="calc-label-option-strong">Sporadyczny wysilek fizyczny</span> <span class="calc-label-option-normal"> przenoszenie rzeczy, troche ruchu (ponad 2000 krokow) i troche spoczynku</span><input type="radio" name="activity" value="0.3"> <span class="checkmark-calc"></span> </label></div>
+           
+        
+            <div class="calc-label-option-br"><label class="label-check"><span class="calc-label-option-strong">Sredni wysilek fizyczny </span> <span class="calc-label-option-normal">dosyc ruchliwa praca, ale nie bardzo wysilajaca, malo odpoczynku, siedzenia, lezenia</span><input type="radio" name="activity" value="0.4"><span class="checkmark-calc"></span></label></div>        
+                  
+        
+            <div class="calc-label-option-br"><label class="label-check"><span class="calc-label-option-strong">Duzy wysilek fizyczny</span> <span class="calc-label-option-normal"> np praca na roli i tym podobne </span><input type="radio" name="activity" value="0.5"><span class="checkmark-calc"></span></label></div>
+        
+                   
+            <div class="calc-label-option-br"><label class="label-check"><span class="calc-label-option-strong">Ekstremalnie duzy wysilek fizyczny</span> <span class="calc-label-option-normal">np praca gornika i inne podobne zawody</span><input type="radio" name="activity" value="0.7"> <span class="checkmark-calc"></span></label></div>
+         
+        </div>
+        <div class="calc-label">
+            <div class="calc-label-heading">Co chcesz osiągnąć?</div>
+            <div class="calc-label-option-br"><label class="label-check">Chcę <strong>schudnąć</strong> <input type="radio" name="whatNow" value="0.87"><span class="checkmark-calc"></span></label></div>
+            <div class="calc-label-option-br"><label class="label-check">Chcę pozostać z <strong>aktualną wagą</strong> <input type="radio" name="whatNow" value="1"><span class="checkmark-calc"></span></label></div>
+            <div class="calc-label-option-br"><label class="label-check">Chcę <strong>przytyć</strong> <input type="radio" name="whatNow" value="1.13"><span class="checkmark-calc"></span></label></div>
+        </div>
+        <button>oblicz</button>
+        
+    </form>
+    <img src="kura2.jpg" alt="">
+    <div class="calc-result"><p></p></div>
+</div>
+</div>
+
+<style>
+    .container{
+        max-width:1180px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .calc-result{
+        display: block;
+        float: left;
+        width: 100%;
+    }
+    .calc-result p{
+        text-align: center;
+    }
+    .calc-primary-color{
+        color:#bc9d65;
+    }
+    .kura-calc{
+        font-size:18px;
+        width: 100%;
+    }
+    .kura-calc img{
+        width:15%; 
+        object-fit: cover;
+        display: block;
+        float: left;
+        min-height: 350px;
+    }
+    .kura-calc h2{
+       text-align: center;
+        margin-bottom: 40px;
+    }
+    .kura-calc form{
+        max-width: 70%;
+        display: block;
+        float: left;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .kura-calc input{
+        border:none;
+        font-size:16px;
+       
+    }
+    .kura-calc input:focus{
+        outline:none;
+    }
+    .calc-label-heading{
+    min-width: 100px;
+    display: block;
+    float: left;
+    
+    }
+    .calc-label-option{
+        margin-right: 50px;
+    }
+    .calc-label-input{
+        
+        height: 50px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #eee;
+        margin-bottom: 10px;   
+    }
+    .calc-label{
+        width: 100%;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #eee;
+        display: block;
+        float: left;
+        padding: 20px 0px;
+    }
+    .calc-label .calc-label-heading{
+        float:inherit;
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
+    .calc-label .calc-label-input{
+        width:50%;
+        display:block;
+        float:left;
+        border-bottom:none;
+        margin-bottom: 0px;
+        height: auto;
+    }
+    .calc-label .calc-label-input input{
+        max-width:100px;
+    }
+    .calc-label-option-br{
+        margin-bottom: 5px;
+        width: 100%;
+        position:relative;
+        display: block;
+        float: left;
+        
+    }
+    .calc-label-option-strong{
+        font-weight: bold;
+    }
+    .calc-label-option-normal{
+        display: block;
+     
+    }
+    .label-check input{
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+    }
+    .checkmark-calc {
+        position: absolute;
+        top: -2px;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: #eee;
+        border-radius: 50%;
+    }
+    .label-intensity .checkmark-calc{
+        top:10px;
+    }
+    .label-check .checkmark-calc:after {
+        content: "";
+        position: absolute;
+        top: 4px;
+        left: 4px;
+        width: 17px;
+        height: 17px;
+        border-radius: 50%;
+        background: white;
+    }
+    .label-check{
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        margin:5px;
+    }
+   
+
+    /* When the radio button is checked, add a blue background */
+    .label-check input:checked ~ .checkmark-calc {
+        background-color: #bc9d65;
+    }
+    .checkmark-calc:before {
+        content: "";
+        position: absolute;
+        display: none;
+        top: 9px;
+        left: 9px;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #bc9d65;
+        z-index: 1;
+    }
+    .kura-calc button{
+        padding: 10px 20px;
+        background: #bc9d65;
+        color: white;
+        border: none;
+        font-size: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+    }
+    /* Show the indicator (dot/circle) when checked */
+    .label-check input:checked ~ .checkmark-calc:before {
+        display: block;
+    }
+    
+    @media(max-width:800px){
+        .kura-calc img{
+            display: none;
+        }
+        .kura-calc form{
+            max-width: 100%;
+        }
+    }
+</style>
+   
+<script>
+    let sex, weight, height, age,intensity,time,amount, activity,whatNow, bmr,tef,tea,neat,result;
+document.querySelector("button").addEventListener("click", function(){
+    event.preventDefault();
+     sex = document.querySelector("input[name=sex]:checked").value *1;
+    weight= document.querySelector("input[name=weight]").value *1;
+    height= document.querySelector("input[name=height]").value *1;
+    age= document.querySelector("input[name=age]").value *1;
+    intensity = document.querySelector("input[name=intensity]:checked").value *1;
+    time = document.querySelector("input[name=time]").value *1;
+    amount = document.querySelector("input[name=amount]").value *1;
+    activity = document.querySelector("input[name=activity]:checked").value *1;
+    whatNow= document.querySelector("input[name=whatNow]:checked").value *1;
+    
+    
+    //1 bmr
+ 
+    bmr=9.99*weight + 6.25*height -4.92*age +sex;
+    
+    // 2 tef
+    tef=bmr*0.1;
+    // 3 tea
+    tea = (intensity * time * amount)/7;
+    // 4 neat
+    neat = bmr * activity;
+    // 5 schudnac, przytyc, zostac z waga
+    result = (bmr + tef + tea + neat)*whatNow;
+    
+    result = result.toFixed();
+    
+    
+    let calcResult= document.querySelector(".calc-result p").innerHTML = "Twoje zapotrzebowanie wynosi: <strong>"+result+" kcal</strong>"; 
+   
+});
+</script>
