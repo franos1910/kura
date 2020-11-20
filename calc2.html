@@ -325,6 +325,6 @@ document.querySelector("button").addEventListener("click", function(){
     
     
     let calcResult= document.querySelector(".calc-result p").innerHTML = "Twoje zapotrzebowanie wynosi: <strong>"+result+" kcal</strong>"; 
-   
+    document.querySelector(".calc-result p").scrollIntoView({ behavior: 'smooth', block: 'center' });
 });
 </script>
