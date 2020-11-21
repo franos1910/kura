@@ -38,8 +38,24 @@
        
         <div class="calc-label">
             <div class="calc-label-heading">W jaki sposób trenujesz? </div>
+            
+            <p><strong>UWAGA:</strong> Podane wartości spalanych kalorii do wybranego poziomu wysiłku są uśrednione / w przybliżeniu. Każdy z nas jest inny, posiada inny poziom wytrenowania, ma inna przemianę materii oraz inne wymiary ciała. 
+
+                Jeśli trenujesz z urządzeniem mierzącym spalone kalorie wykonaj kroki poniżej
+            </p>
+                <ol>
+                    <li>Wybierz opcję "brak dodatkowej aktywności fizycznej"</li>
+                    <li>Wykonaj działanie - ilość kalorii spalonych na treningu x ilość treningów w tygodniu.</li>
+                    <li>Otrzymany wynik dzielimy przez 7 (nawet jeśli trenujesz 2, czy 4 razy w tygodniu i tak dzielisz przez 7)</li>
+                    <li>Otrzymany wynik dodaj do zapotrzebowania kalorycznego, które pojawi Ci się po kliknięciu przycisku OBLICZ </li>
+            </ol>            
+            
+            <p>
+                Jeśli nie masz przyrządu do mierzenia spalonych kalorii na swoich treningach, skorzystaj z opcji poniżej</p>
+                
         <select id="intensity">
             <option value="" disabled selected>Wybierz intensywność treningu</option>
+            <option value="0" name="intensity">Brak dodatkowej aktywności fizycznej</option>
             <option value="4.5" name="intensity">Spokojny, klasyczny trening na siłowni - hipetroficzny (1-2 minuty odpoczynku pomiędzy seriami)</option>
             <option value="5.5" name="intensity">Spokojny trening siłowo/wytrzymałościowy na siłowni (1-2 minuty odpoczynku pomiędzy seriami)</option>
             <option value="6.5" name="intensity">Trening z MOICH EBOOKÓW (ćwiczenia domowe, kalisteniczne, mieszane, przerwy 30-60 sekund)</option>
@@ -52,7 +68,7 @@
       
         </select>
             <div class="calc-label-input">
-                <label><strong>Średni czas treningu: </strong><input type="number" min="0" name="time" placeholder="czas (min)">
+                <label><strong>Średni czas jednego treningu: </strong><input type="number" min="0" name="time" placeholder="czas (min)">
                 </label>
             </div>
             <div class="calc-label-input">
@@ -101,6 +117,10 @@
 
 
 <style>
+    .calc-label p, .calc-label ol{
+        font-size: 16px;
+        text-align: justify;
+    }
     .kura-calc select{
         height: 35px;
         width: 100%;
@@ -110,6 +130,16 @@
         -moz-appearance: none;
         appearance: none;
         background-color: transparent;
+        
+        background-image: linear-gradient(
+            45deg
+            , transparent 50%, #2c303a 50%), linear-gradient(
+                135deg
+                , #2c303a 50%, transparent 50%), linear-gradient(to right, #ffffff, #ffffff);
+        background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), 100% 0;
+        background-size: 5px 5px, 5px 5px, 2.5em 2.5em;
+        background-repeat: no-repeat;
+        padding-right: 36px;
     }
     .calc-left, .calc-right{
         width:50%;
@@ -124,7 +154,6 @@
 
     .calc-result{
         display: block;
-        float: left;
         width: 100%;
     }
     .calc-result p{
@@ -136,6 +165,9 @@
     .kura-calc{
         font-size:18px;
         width: 100%;
+        box-shadow: 0px 0px 3px black;
+        box-sizing: border-box;
+        padding: 20px 0px;
     }
 
     .kura-calc h2{
@@ -144,8 +176,7 @@
     }
     .kura-calc form{
         display: block;
-        float: left;
-        padding: 20px;
+        float:left;
         box-sizing: border-box;
     }
     .kura-calc input{
@@ -179,6 +210,7 @@
     }
     .calc-label .calc-label-heading{
         float:inherit;
+        width: 100%;
         height: 45px;
         font-weight: bold;
     }
@@ -290,10 +322,18 @@
         .calc-right, .calc-left{
             width:100% !important;
         }
+        .kura-calc form{
+            float:inherit;
+        }
     }
     @media(max-width:600px){
         .calc-label-option{
             margin-right: 0px !important;
+        }
+    }
+    @media(max-width:400px){
+        .calc-label-heading {
+            min-width: 66px;
         }
     }
 </style>
@@ -302,7 +342,7 @@
     let sex, weight, height, age,intensity,time,amount, activity,whatNow, bmr,tef,tea,neat,result;
     
     const calcErr = () =>{
-        document.querySelector(".calc-result p").innerHTML="Wprowadziłeś błędne dane! Spróbuj ponownie.";
+        document.querySelector(".calc-result p").innerHTML="<span style='color:red;'>Wprowadziłeś błędne dane! Spróbuj ponownie.</span>";
         document.querySelector(".calc-result p").scrollIntoView({ behavior: 'smooth', block: 'center' })};
     
 document.querySelector("button").addEventListener("click", function(){
