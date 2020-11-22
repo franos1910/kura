@@ -355,7 +355,7 @@
     let sex, weight, height, age,intensity,time,amount, activity,whatNow, bmr,tef,tea,neat,result;
     
     const calcErr = () =>{
-        document.querySelector(".calc-result p").innerHTML="<span style='color:red;'>Wprowadziłeś błędne dane! Spróbuj ponownie.</span>";
+        document.querySelector(".calc-result p").innerHTML="<span style='color:red;'>Wprowadziłeś błędne dane, lub nie uzupełniłeś jakiegoś elementu. Spróbuj ponownie.</span>";
         document.querySelector(".calc-result p").scrollIntoView({ behavior: 'smooth', block: 'center' })};
     
 document.querySelector("button").addEventListener("click", function(){
